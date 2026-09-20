@@ -1,0 +1,5 @@
+# MVP bootstrap ownership.
+# Do not require CODEOWNERS approval if the same GitHub account authors all PRs.
+* @ugnisgamew
+
+# Replace with module-specific owners when separate contributor identities exist.
