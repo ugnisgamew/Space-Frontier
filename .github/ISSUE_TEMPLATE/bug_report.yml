@@ -1,0 +1,58 @@
+name: Bug Report
+description: Report a reproducible Space Frontier defect.
+title: "[BUG] "
+labels:
+  - "type:bug"
+body:
+  - type: textarea
+    id: current
+    attributes:
+      label: Current behavior
+      description: What actually happens?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen according to design/contracts?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Start...
+        2. Build...
+        3. Observe...
+    validations:
+      required: true
+
+  - type: input
+    id: related_task
+    attributes:
+      label: Related Task ID
+      placeholder: SF-COMBAT-008
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, screenshots, test output, seed/config, platform.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Blocker
+        - Critical
+        - Major
+        - Minor
+    validations:
+      required: true
