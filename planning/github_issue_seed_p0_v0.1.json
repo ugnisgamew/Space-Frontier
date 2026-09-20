@@ -1,0 +1,303 @@
+{
+  "version": "v0.1",
+  "repository": "ugnisgamew/Space-Frontier",
+  "note": "Create Issues in this order; set Ready only when all dependencies are Done.",
+  "issues": [
+    {
+      "order": 1,
+      "task_id": "SF-ARCH-001",
+      "title": "[SF-ARCH-001] Создать каркас Godot-проекта и структуру каталогов",
+      "role": "R1",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:architecture",
+        "priority:p0",
+        "role:r1"
+      ],
+      "depends_on": [],
+      "deliverable": "project.godot + каталоги assets/configs/src/scenes/tests/tools",
+      "definition_of_done": "Проект открывается без ошибок; структура соответствует TDD; README описывает запуск",
+      "initial_project_status": "Ready"
+    },
+    {
+      "order": 2,
+      "task_id": "SF-CONT-001",
+      "title": "[SF-CONT-001] MVP content bible",
+      "role": "R8",
+      "priority": "P1",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:content",
+        "priority:p1",
+        "role:r8"
+      ],
+      "depends_on": [],
+      "deliverable": "docs/content_bible.md",
+      "definition_of_done": "Зафиксированы sci-fantasy tone, naming, factions, no-scope-creep rules",
+      "initial_project_status": "Ready"
+    },
+    {
+      "order": 3,
+      "task_id": "SF-ARCH-002",
+      "title": "[SF-ARCH-002] Зафиксировать публичные интерфейсы систем",
+      "role": "R1",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:architecture",
+        "priority:p0",
+        "role:r1"
+      ],
+      "depends_on": [
+        "SF-ARCH-001"
+      ],
+      "deliverable": "interfaces/contracts: BattleClock, PathProvider, ConfigRepository, EventBus, CommandBus",
+      "definition_of_done": "Интерфейсы покрывают TDD; нет зависимостей UI→domain internals",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 4,
+      "task_id": "SF-QA-001",
+      "title": "[SF-QA-001] Branch/PR/commit conventions + CODEOWNERS",
+      "role": "R7",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:qa",
+        "priority:p0",
+        "role:r7"
+      ],
+      "depends_on": [
+        "SF-ARCH-001"
+      ],
+      "deliverable": ".github templates + docs/contributing.md",
+      "definition_of_done": "Каждая задача имеет Task ID; PR template требует tests/DoD/handoff",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 5,
+      "task_id": "SF-QA-004",
+      "title": "[SF-QA-004] Unit test harness",
+      "role": "R7",
+      "priority": "P0",
+      "milestone": "P1 — Headless Core",
+      "labels": [
+        "type:task",
+        "area:qa",
+        "priority:p0",
+        "role:r7"
+      ],
+      "depends_on": [
+        "SF-ARCH-001"
+      ],
+      "deliverable": "tests/unit",
+      "definition_of_done": "Есть runnable test command локально/headless",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 6,
+      "task_id": "SF-BAL-001",
+      "title": "[SF-BAL-001] Определить JSON conventions и versioning",
+      "role": "R2",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:balance",
+        "priority:p0",
+        "role:r2"
+      ],
+      "depends_on": [
+        "SF-ARCH-002"
+      ],
+      "deliverable": "docs/config_contract.md",
+      "definition_of_done": "Есть schema_version, stable ids, defaults, error policy",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 7,
+      "task_id": "SF-NAV-001",
+      "title": "[SF-NAV-001] IPathProvider contract",
+      "role": "R5",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:navigation",
+        "priority:p0",
+        "role:r5"
+      ],
+      "depends_on": [
+        "SF-ARCH-002"
+      ],
+      "deliverable": "path_provider.gd",
+      "definition_of_done": "API не зависит от Path2D-specific классов",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 8,
+      "task_id": "SF-ARCH-003",
+      "title": "[SF-ARCH-003] Реализовать BattleWorld и BattleState skeleton",
+      "role": "R1",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:architecture",
+        "priority:p0",
+        "role:r1"
+      ],
+      "depends_on": [
+        "SF-ARCH-002"
+      ],
+      "deliverable": "battle_world.gd, battle_state.gd",
+      "definition_of_done": "Создание/сброс боя детерминированы; состояние не зависит от SceneTree View",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 9,
+      "task_id": "SF-ARCH-004",
+      "title": "[SF-ARCH-004] Реализовать EventBus и каталог battle events",
+      "role": "R1",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:architecture",
+        "priority:p0",
+        "role:r1"
+      ],
+      "depends_on": [
+        "SF-ARCH-002"
+      ],
+      "deliverable": "event_bus.gd + battle_events.gd",
+      "definition_of_done": "Есть typed/payload contracts для damage, death, tower, wave, life, status",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 10,
+      "task_id": "SF-ARCH-005",
+      "title": "[SF-ARCH-005] Реализовать CommandBus / BattleController commands",
+      "role": "R1",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:architecture",
+        "priority:p0",
+        "role:r1"
+      ],
+      "depends_on": [
+        "SF-ARCH-002"
+      ],
+      "deliverable": "battle_controller.gd + command contracts",
+      "definition_of_done": "Команды Build/Upgrade/Sell/Target/Pause/Speed валидируются до изменения state",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 11,
+      "task_id": "SF-BAL-002",
+      "title": "[SF-BAL-002] ConfigLoader + ConfigRepository + validation pipeline",
+      "role": "R2",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:balance",
+        "priority:p0",
+        "role:r2"
+      ],
+      "depends_on": [
+        "SF-BAL-001"
+      ],
+      "deliverable": "config_loader.gd + validator",
+      "definition_of_done": "Некорректный JSON не запускает бой; ошибка содержит file/path/field",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 12,
+      "task_id": "SF-BAL-003",
+      "title": "[SF-BAL-003] Схема Tower config",
+      "role": "R2",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:balance",
+        "priority:p0",
+        "role:r2"
+      ],
+      "depends_on": [
+        "SF-BAL-001"
+      ],
+      "deliverable": "tower.schema.json + sample configs",
+      "definition_of_done": "Поддержаны damage, APS, range, cost, upgrade, damage_type, tags, synergy refs",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 13,
+      "task_id": "SF-BAL-004",
+      "title": "[SF-BAL-004] Схема Enemy config и resistances",
+      "role": "R2",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:balance",
+        "priority:p0",
+        "role:r2"
+      ],
+      "depends_on": [
+        "SF-BAL-001"
+      ],
+      "deliverable": "enemy.schema.json",
+      "definition_of_done": "HP/speed/armor/reward + kinetic/plasma/laser/void/poison resistances",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 14,
+      "task_id": "SF-BAL-005",
+      "title": "[SF-BAL-005] Схема StatusEffect config",
+      "role": "R2",
+      "priority": "P0",
+      "milestone": "P0 — Foundation",
+      "labels": [
+        "type:task",
+        "area:balance",
+        "priority:p0",
+        "role:r2"
+      ],
+      "depends_on": [
+        "SF-BAL-001"
+      ],
+      "deliverable": "statuses.schema.json",
+      "definition_of_done": "Duration/tick/stack rules поддерживают freeze/burn/stun/armor_break/poisoned",
+      "initial_project_status": "Backlog"
+    },
+    {
+      "order": 15,
+      "task_id": "SF-BAL-007",
+      "title": "[SF-BAL-007] Level/Wave schema + boss rule validator",
+      "role": "R2",
+      "priority": "P0",
+      "milestone": "P1 — Headless Core",
+      "labels": [
+        "type:task",
+        "area:balance",
+        "priority:p0",
+        "role:r2"
+      ],
+      "depends_on": [
+        "SF-BAL-001"
+      ],
+      "deliverable": "level.schema.json + wave.schema.json",
+      "definition_of_done": "Уровень, кратный 5, невалиден без unique boss_id в финальной волне",
+      "initial_project_status": "Backlog"
+    }
+  ]
+}

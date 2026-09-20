@@ -1,0 +1,145 @@
+{
+  "version": "v0.1",
+  "labels": [
+    {
+      "name": "type:task",
+      "color": "1D76DB",
+      "description": "Planned implementation task"
+    },
+    {
+      "name": "type:bug",
+      "color": "D73A4A",
+      "description": "Reproducible defect"
+    },
+    {
+      "name": "type:rfc",
+      "color": "5319E7",
+      "description": "Architecture or contract change proposal"
+    },
+    {
+      "name": "type:tech-debt",
+      "color": "FBCA04",
+      "description": "Technical debt"
+    },
+    {
+      "name": "area:architecture",
+      "color": "0052CC",
+      "description": "Core architecture and integration"
+    },
+    {
+      "name": "area:balance",
+      "color": "0E8A16",
+      "description": "Balance, configs and simulation metrics"
+    },
+    {
+      "name": "area:combat",
+      "color": "B60205",
+      "description": "Combat runtime and gameplay systems"
+    },
+    {
+      "name": "area:performance",
+      "color": "D4C5F9",
+      "description": "Pooling, runtime and performance"
+    },
+    {
+      "name": "area:navigation",
+      "color": "006B75",
+      "description": "Pathing and movement systems"
+    },
+    {
+      "name": "area:ui",
+      "color": "C2E0C6",
+      "description": "UI/UX and presentation"
+    },
+    {
+      "name": "area:qa",
+      "color": "BFDADC",
+      "description": "Tests, CI and release quality"
+    },
+    {
+      "name": "area:content",
+      "color": "F9D0C4",
+      "description": "Levels, towers, enemies and content design"
+    },
+    {
+      "name": "area:data",
+      "color": "C5DEF5",
+      "description": "JSON schemas, loaders and data contracts"
+    },
+    {
+      "name": "area:docs",
+      "color": "EDEDED",
+      "description": "Documentation only"
+    },
+    {
+      "name": "priority:p0",
+      "color": "B60205",
+      "description": "Critical path / must-have MVP"
+    },
+    {
+      "name": "priority:p1",
+      "color": "D93F0B",
+      "description": "Important MVP"
+    },
+    {
+      "name": "priority:p2",
+      "color": "FBCA04",
+      "description": "Lower MVP priority"
+    },
+    {
+      "name": "role:r1",
+      "color": "0052CC",
+      "description": "Lead Architect / Integrator"
+    },
+    {
+      "name": "role:r2",
+      "color": "0E8A16",
+      "description": "Balance & Data Engineer"
+    },
+    {
+      "name": "role:r3",
+      "color": "B60205",
+      "description": "Combat Gameplay Engineer"
+    },
+    {
+      "name": "role:r4",
+      "color": "6F42C1",
+      "description": "Performance / Runtime Engineer"
+    },
+    {
+      "name": "role:r5",
+      "color": "006B75",
+      "description": "Navigation / Level Systems Engineer"
+    },
+    {
+      "name": "role:r6",
+      "color": "1D76DB",
+      "description": "UI/UX & Presentation Engineer"
+    },
+    {
+      "name": "role:r7",
+      "color": "586069",
+      "description": "QA / DevOps Engineer"
+    },
+    {
+      "name": "role:r8",
+      "color": "D876E3",
+      "description": "Level & Content Designer"
+    },
+    {
+      "name": "risk:high",
+      "color": "B60205",
+      "description": "High architecture/delivery risk"
+    },
+    {
+      "name": "risk:medium",
+      "color": "FBCA04",
+      "description": "Medium risk"
+    },
+    {
+      "name": "risk:low",
+      "color": "0E8A16",
+      "description": "Low risk"
+    }
+  ]
+}
