@@ -1,0 +1,150 @@
+name: AI / Development Task
+description: Create one implementation task for a Space Frontier Task ID.
+title: "[SF-____-___] "
+labels:
+  - "type:task"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One Issue must represent exactly one Space Frontier Task ID.
+        Read AGENTS.md, MASTER_AGENT_PROMPT.md and the Technical Design before implementation.
+
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: Stable Task ID from planning/space_frontier_mvp_tasks_v0.1.json
+      placeholder: SF-COMBAT-008
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      options:
+        - R1 — Lead Architect / Integrator
+        - R2 — Balance & Data Engineer
+        - R3 — Combat Gameplay Engineer
+        - R4 — Performance / Runtime Engineer
+        - R5 — Navigation / Level Systems Engineer
+        - R6 — UI/UX & Presentation Engineer
+        - R7 — QA / DevOps Engineer
+        - R8 — Level & Content Designer
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0
+        - P1
+        - P2
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What exact outcome must this task produce?
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: List Task IDs that must already be Done. Use "None" if there are none.
+      placeholder: |
+        - SF-ARCH-002
+        - SF-BAL-001
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Required sources
+      value: |
+        - AGENTS.md
+        - MASTER_AGENT_PROMPT.md
+        - docs/Space_Frontier_Technical_Design_v0.1.md
+        - planning/space_frontier_mvp_tasks_v0.1.json
+        - current merged repository code
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: In scope
+      description: Exact work allowed in this Issue.
+    validations:
+      required: true
+
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+      description: Explicitly list things this agent must not implement.
+    validations:
+      required: true
+
+  - type: textarea
+    id: ownership
+    attributes:
+      label: Ownership area
+      description: Paths/modules the agent is expected to modify.
+      placeholder: |
+        src/systems/
+        tests/unit/
+    validations:
+      required: true
+
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Deliverable
+      description: Concrete files/features expected at completion.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dod
+    attributes:
+      label: Definition of Done
+      description: Copy the task DoD and add task-specific completion criteria.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance scenarios
+      description: Observable scenarios/tests that prove the task works.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tests
+    attributes:
+      label: Required tests
+      description: Unit/integration/config/determinism/performance checks expected.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Ready gate
+      options:
+        - label: All dependency Task IDs are Done or explicitly waived by Lead Architect.
+          required: true
+        - label: Scope does not silently change a public contract.
+          required: true
+        - label: Task exists in planning/space_frontier_mvp_tasks_v0.1.json.
+          required: true
